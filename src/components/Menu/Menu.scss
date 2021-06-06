@@ -1,0 +1,57 @@
+@import './../../App.scss';
+
+.menu {
+    border-right: $border-color 2px solid;
+    padding: 40px 0 0 40px;
+    height: 100%;
+    overflow-y: scroll;
+
+    .submenu {
+        margin-bottom: 1rem;
+
+        .label {
+            color: #a8b2ce;
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: 'Baloo Tammudu 2';
+        }
+
+        .link-container {
+            position: relative;
+            padding-left: 0.2rem;
+    
+            .link {
+                font-weight: 700;
+                text-decoration: none;
+                font-family: 'Baloo Tammudu 2';
+                padding-left: 0.5rem;
+                display: flex;
+                align-items: center;
+                fill: $color-primary;
+
+                .icon {
+                    width: 20px;
+                    height: 20px;
+                    margin-bottom: 9px;
+                    margin-right: 10px;
+                }
+
+                &.active {
+                    color: #fa7c03;
+                    fill: #fa7c03;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 80%;
+                        width: 5px;
+                        border-radius: 3px;
+                        background-color: #fa7c03;
+                        right: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

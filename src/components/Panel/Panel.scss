@@ -1,0 +1,19 @@
+@import './../../App.scss';
+
+.panel {
+    border-left: 2px solid $border-color;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+@media screen and (max-width: 1100px) {
+    .panel {
+        border-left: 2px solid #f2f7fd;
+        height: 50px;
+        width: 100%;
+        background: red;
+        overflow-y: scroll;
+        position: absolute;
+        bottom: 0;
+    }
+}

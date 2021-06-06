@@ -1,0 +1,36 @@
+.square-deco {
+	position: relative;
+    width: calc(5vw - 5px);
+    height: calc(5vw - 5px);
+    margin: 2px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.home-cover {
+	position: absolute;
+    width: calc(5vw - 9px);
+    height: calc(5vw - 9px);
+    border-radius: 8px;
+	transition: opacity 1s ease;
+	opacity: 0;
+}
+
+.home-cover.is-animated{
+    animation: pulse 60s infinite reverse;
+}
+
+@keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}

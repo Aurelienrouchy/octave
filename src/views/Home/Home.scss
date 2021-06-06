@@ -1,0 +1,25 @@
+@import './../../App.scss';
+
+.home {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    padding: 0 3rem;
+    height: 100%;
+    overflow-y: scroll;
+
+    .tabs-label {
+        display: flex;
+        align-items: center;
+
+        .tab-label {
+            color: $color-secondary;
+            margin-right: 1rem;
+            font-weight: 700;
+            transition: color .3s ease;
+
+            &.active {
+                color: $color-primary;
+            }
+        }
+    }
+}
