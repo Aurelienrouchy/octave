@@ -3,9 +3,10 @@ import TrackRow from '../TrackRow/TrackRow';
 
 import './TracksList.scss';
 
-const TracksList = ({ tracks }) => {
+const TracksList = ({ tracks, label }) => {
     return (
         <div className="tracks-list">
+            <div className="label">{ label }</div>
             {
                 tracks.map((track, index) => <TrackRow index={index} key={track.id} track={track} />)
             }

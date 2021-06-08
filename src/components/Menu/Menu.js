@@ -10,18 +10,17 @@ const Menu = () => {
 
     return (
         <div className="menu">
-            <div className="logo">LOGO</div>
             { 
                 store.mainMenuCfg.map(({ id, label, subtitles }) => (
                     <div className="submenu" key={id}>
                         <div className="label">{ label.toUpperCase() }</div>
                         <div className="submenu-link">
                             {
-                                subtitles.map(({ label, path, Icon }) => (
-                                    <div className="link-container" key={label}>
+                                subtitles.map(({ label, path, Icon, disabled }) => (
+                                    <div className={`link-container ${disabled ? 'disabled' : ''}`} key={label}>
                                         <NavLink
                                             activeClassName="active"
-                                            className="link"
+                                            className={`link ${disabled ? 'disabled' : ''}`} 
                                             to={`/${path}`}
                                         >
                                             <Icon className="icon" />

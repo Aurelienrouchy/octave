@@ -1,6 +1,5 @@
 .music-tab {
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    padding-top: 1rem;
+    padding: 1rem 0;
     grid-gap: 2rem;
 }

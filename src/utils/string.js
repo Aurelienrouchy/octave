@@ -1,10 +1,9 @@
-export const queryToObject = queryString => {
-    const pairsString = queryString[0] === '?' ? queryString.slice(1) : queryString
-    const pairs = pairsString
-        .split('&')
-        .map(str => str.split('=').map(decodeURIComponent))
-    return pairs.reduce((acc, [key, value]) => key ? { ...acc, [key]: value } : acc, {})
-}
+export const timeToString = time => {
+    const dt = new Date(time);
+    return `${dt.getMinutes()}:${dt.getSeconds() < 10 ? '0' + dt.getSeconds() : dt.getSeconds()}`
+};
+
+export const formatKM = number => number > 999 && number <= 999999 ? `${Math.trunc(number/1000)}K` : number > 999999 ? `${Math.trunc(number/1000000)}M` : `${number}`; 
 
 export const capitalize = str  => str.charAt(0).toUpperCase() + lowercase(str.slice(1));
 

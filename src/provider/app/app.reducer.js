@@ -3,7 +3,8 @@ import {
     UPDATE_USER,
     UPDATE_NEW_RELEASES_ALBUMS,
     UPDATE_CURRENT_USER_SAVED_ALBUMS,
-    UPDATE_CURRENT_USER_SAVED_TRACKS
+    UPDATE_CURRENT_USER_SAVED_TRACKS,
+    SET_VALUE_ARTISTS_SEARCH
 } from './app.type';
 
 export const AppReducer = (state = AppState, action) => {
@@ -30,6 +31,12 @@ export const AppReducer = (state = AppState, action) => {
             return {
                 ...state,
                 currentUserSavedTracks: [ ...action.payload ]
+            }
+        }
+        case SET_VALUE_ARTISTS_SEARCH: {
+            return {
+                ...state,
+                inputValueArtistsSearch: action.payload
             }
         }
         default:

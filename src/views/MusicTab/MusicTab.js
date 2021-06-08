@@ -43,7 +43,7 @@ const MusicTab = () => {
         <div className="music-tab">
             <AlbumsRows label="New Releases" albums={newReleasesAlbums} />
             <AlbumsRows label="Saved Albums" albums={currentUserSavedAlbums} />
-            <TracksList tracks={currentUserSavedTracks} />
+            <TracksList label="Favorites Tracks" tracks={currentUserSavedTracks} />
         </div>
     );
 }

@@ -5,9 +5,16 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Dashboard from '../views/Dashboard/Dashboard';
 import LandingPage from "../views/LandingPage/LandingPage";
 import { useStore } from '../utils/store';
+
+import './styles.scss';
+
+import Menu from '../components/Menu/Menu';
+import Panel from '../components/Panel/Panel';
+import Home from '../views/Home/Home';
+import Artists from '../views/Artists/Artists';
+import ArtistDetails from '../views/ArtistDetails/ArtistDetails';
 
 function PrivateRoute({ children, ...rest }) {
     const store = useStore('auth');
@@ -38,8 +45,22 @@ export default function AuthRoute() {
                 <Route exact path="/">
                     <LandingPage />
                 </Route>
-                <PrivateRoute path="/dashboard">
-                    <Dashboard />
+                <PrivateRoute >
+                    <div className="dashboard">
+                        <Menu />
+                        <Switch>
+                            <PrivateRoute path="/dashboard">
+                                <Home />
+                            </PrivateRoute>
+                            <PrivateRoute exact path="/artists">
+                                <Artists />
+                            </PrivateRoute>
+                            <PrivateRoute path="/artists/:id">
+                                <ArtistDetails />
+                            </PrivateRoute>
+                        </Switch>
+                        <Panel />
+                    </div>
                 </PrivateRoute>
                 <Route path="*">
                     <div>Not found</div>

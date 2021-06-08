@@ -1,0 +1,164 @@
+
+
+.audio-player {
+    width: 100%;
+    height: 500px;
+    background-color: #2a9999;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    color: #fff;
+    font-family: 'Baloo Tammudu 2';
+    padding: 2rem;
+
+    .cover {
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .label {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .infos-container {
+        text-align: center;
+        padding-top: 1rem;
+        line-height: 1.5rem;
+
+        .infos-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .infos-artist {
+            opacity: 0.8;
+            font-weight: 500;
+        }
+    }
+
+    .time-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .cursor-container {
+            position: relative;
+            width: 70%;
+            background-color: #42afaf;
+            height: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+
+            .cursor-line {
+                position: absolute;
+                background-color: #fff;
+                height: 10px;
+                border-radius: 4px;
+            }
+        }
+
+        .current-time {
+            padding-top: 8px;
+        }
+
+        .total-time {
+            padding-top: 8px;
+        }
+    }
+
+    .controlers {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+
+        .button {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &.prev {
+                transform: rotate(180deg)
+            }
+
+            .icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .controlers-play {
+            width: 50px !important;
+            height: 50px !important;
+            background-color: #42afaf;
+            padding-left: 3px;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1450px) {
+    .audio-player {
+        height: 100%;
+        padding: 0 0 2rem 0;
+        justify-content: space-between;
+
+        .time-container {
+            flex-direction: column;
+
+            .cursor-container {
+                width: 80%;
+            }
+        }
+
+        .label {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .audio-player {
+        height: 70px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+        border-radius: 10px;
+
+        .cover {
+            min-width: 70px;
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+        }
+        .label {
+            display: none;
+        }
+
+        .controlers {
+            min-width: 150px;
+            width: 150px;
+            margin: 0 2rem;
+        }
+
+        .infos-container {
+            text-align: center;
+            margin: 0 2rem 0.7rem;
+
+            .infos-artist {
+                display: none;
+            }
+        }
+    }
+}

@@ -4,13 +4,9 @@ import {
     Route,
     NavLink,
 } from "react-router-dom";
+
 import { capitalize } from '../../utils/string';
-
 import MusicTab from '../MusicTab/MusicTab';
-// import Favorite from '../Favorite/Favorite';
-// import Search from '../Search/Search';
-// import Upload from '../Upload/Upload';
-
 import './Home.scss';
 
 const routes = [{

@@ -1,16 +1,14 @@
 import React from 'react';
 
 import PlayButton from './../PlayButton/PlayButton';
+import { timeToString } from './../../utils/string';
 import './TrackRow.scss';
+import { play } from '../../utils/api';
 
 const TrackRow = ({ track, index }) => {
     const cover = track?.album?.images?.filter(image => image.height === 300)[0];
     const artistName = track?.album?.artists[0].name || '';
-    const dt = new Date(track.duration_ms)
-    const duration = {
-        m: dt.getMinutes(),
-        s: `${dt.getSeconds() < 10 ? '0' + dt.getSeconds() : dt.getSeconds()}`
-    }
+    const duration = timeToString(track.duration_ms);
 
     return (
         <div className="track">
@@ -23,8 +21,8 @@ const TrackRow = ({ track, index }) => {
                 </div>
             </div>
             <div className="track-infos-right">
-                <div className="duration">{`${duration.m}:${duration.s}`}</div>
-                <PlayButton />
+                <div className="duration">{duration}</div>
+                <PlayButton onClick={() => play({ "uris": [track.uri]})} />
             </div>
         </div>
     );

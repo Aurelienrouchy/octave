@@ -56,7 +56,6 @@ function LandingPage() {
     return (
         <div className="landingpage">
             {/* { loading && <div className="loading">LOADIN...</div>} */}
-            <div className="logo">LOGO</div>
             <div className="main">
                 <div className="infos-container">
                     <div className="title">Playing the Mood.</div>

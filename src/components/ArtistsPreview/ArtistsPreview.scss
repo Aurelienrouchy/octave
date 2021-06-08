@@ -1,0 +1,140 @@
+@import './../../App.scss';
+
+.artists-preview {
+    border: 2px solid #f2f7fd;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: 'Baloo Tammudu 2';
+    line-height: 1.8rem;
+    width: calc(25% - 2rem);
+    max-height: calc(8rem + ((100vw - 400px - 200px - 9rem) / 4) - 60px);
+    margin: 1rem;
+    cursor: pointer;
+
+    .cover {
+        width: calc(((100vw - 400px - 200px - 9rem) / 4) - 60px);
+        height: calc(((100vw - 400px - 200px - 9rem) / 4) - 60px);
+        border-radius: 1.5rem;
+        transition: all .3s ease;
+        cursor: pointer;
+        margin-bottom: 1rem;
+
+        &.cover-in {
+            animation: animate-in 0.6s;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.36);
+        }
+    }
+
+    .infos {
+        width: 100%;
+        
+
+        .name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 1.1rem;
+            color: $color-primary;
+            font-weight: 700;
+        }
+
+        .followers {
+            color: $color-secondary;
+            font-weight: 600;
+        }
+
+        .popularity {
+            position: relative;
+            width: 90px;
+            margin-bottom: 1rem;
+
+            .stars {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                display: flex;
+                overflow: hidden;
+
+                .star {
+                    min-width: 16px;
+                    height: 16px;
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes animate-in {
+    from {
+        transform: var(--translate-in);
+        height: var(--height-in);
+        width: var(--width-in);
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1450px) {
+    .artists-preview {
+        width: calc(33% - 2rem);
+        max-height: calc(12rem + ((100vw - 200px - 200px - 9rem) / 3) - 60px);
+
+        .cover {
+            width: calc(((100vw - 200px - 200px - 9rem) / 3) - 60px)!important;
+            height: calc(((100vw - 200px - 200px - 9rem) / 3) - 60px)!important;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .artists-preview {
+        width: calc(25% - 2rem);
+        max-height: calc(8rem + ((100vw - 200px - 9rem) / 4) - 60px);
+
+        .cover {
+            width: calc(((100vw - 200px - 9rem) / 4) - 60px)!important;
+            height: calc(((100vw - 200px - 9rem) / 4) - 60px)!important;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .artists-preview {
+        width: calc(33% - 2rem);
+        max-height: calc(16rem + ((100vw - 200px - 9rem) / 3) - 60px);
+
+        .cover {
+            width: calc(((100vw - 200px - 9rem) / 3) - 60px)!important;
+            height: calc(((100vw - 200px - 9rem) / 3) - 60px)!important;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .artists-preview {
+        width: calc(50% - 2rem);
+        max-height: calc(8rem + ((100vw - 200px - 9rem) / 2) - 60px);
+
+        .cover {
+            width: calc(((100vw - 200px - 9rem) / 2) - 60px)!important;
+            height: calc(((100vw - 200px - 9rem) / 2) - 60px)!important;
+        }
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .artists-preview {
+        width: calc(100% - 2rem);
+        max-height: calc(8rem + ((100vw - 200px - 9rem) / 1) - 60px);
+
+        .cover {
+            width: calc(((100vw - 200px - 9rem) / 1) - 60px)!important;
+            height: calc(((100vw - 200px - 9rem) / 1) - 60px)!important;
+        }
+    }
+}

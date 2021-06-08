@@ -17,23 +17,28 @@ const mainMenuCfg = [{
         subtitles: [{
             label: 'home',
             path: 'dashboard',
-            Icon: Home
+            Icon: Home,
+            disabled: false
         }, {
             label: 'search',
             path: 'search',
-            Icon: Search
+            Icon: Search,
+            disabled: true
         }, {
             label: 'discover',
             path: 'discover',
-            Icon: Compass
+            Icon: Compass,
+            disabled: true
         }, {
             label: 'albums',
             path: 'albums',
-            Icon: Album
+            Icon: Album,
+            disabled: true
         }, {
             label: 'artists',
             path: 'artists',
-            Icon: User
+            Icon: User,
+            disabled: false
         }]
     }, {
         id: 2,
@@ -41,15 +46,18 @@ const mainMenuCfg = [{
         subtitles: [{
             label: 'recent',
             path: 'recent',
-            Icon: Clock
+            Icon: Clock,
+            disabled: true
         }, {
             label: 'favourites',
             path: 'favourites',
-            Icon: Heart
+            Icon: Heart,
+            disabled: true
         }, {
             label: 'local',
             path: 'local',
-            Icon: Folder
+            Icon: Folder,
+            disabled: true
         }]
     }, {
         id: 3,
@@ -57,15 +65,18 @@ const mainMenuCfg = [{
         subtitles: [{
             label: 'create new',
             path: 'create new',
-            Icon: Add
+            Icon: Add,
+            disabled: true
         }, {
             label: 'pop punk',
             path: 'pop punk',
-            Icon: Playlist
+            Icon: Playlist,
+            disabled: true
         }, {
             label: 'rock',
             path: 'rock',
-            Icon: Playlist
+            Icon: Playlist,
+            disabled: true
         }]
     }, {
         id: 4,
@@ -73,11 +84,13 @@ const mainMenuCfg = [{
         subtitles: [{
             label: 'settings',
             path: 'settings',
-            Icon: Settings
+            Icon: Settings,
+            disabled: true
         }, {
             label: 'log out',
             path: 'log out',
-            Icon: Logout
+            Icon: Logout,
+            disabled: true
         }]
     }, 
 ]
@@ -87,5 +100,6 @@ export const AppState = {
     mainMenuCfg,
     newReleasesAlbums: [],
     currentUserSavedAlbums: [],
-    currentUserSavedTracks: []
+    currentUserSavedTracks: [],
+    inputValueArtistsSearch: '',
 };

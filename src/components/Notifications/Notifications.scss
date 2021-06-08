@@ -1,0 +1,61 @@
+@import './../../App.scss';
+
+.notifications {
+    font-family: 'Baloo Tammudu 2';
+
+    .label {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        font-weight: 700;
+        color: $color-primary;
+    }
+
+    .notification {
+        display: grid;
+        width: 100%;
+        grid-gap: 1rem;
+        grid-template-columns: 60px auto auto;
+        margin-bottom: 1rem;
+
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background-color: #f2f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .icon {
+                width: 25px;
+                height: 25px;
+                fill: #7c8cb5
+            }
+        }
+
+        .infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            line-height: 1rem;
+
+            .notification-label {
+                color: $color-primary;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+        }
+
+        .time {
+            font-weight: 500;
+            color: $color-secondary;
+        }
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .notifications {
+        display: none;
+    }
+}
