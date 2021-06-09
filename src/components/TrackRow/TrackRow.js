@@ -6,7 +6,7 @@ import './TrackRow.scss';
 import { play } from '../../utils/api';
 
 const TrackRow = ({ track, index }) => {
-    const cover = track?.album?.images?.filter(image => image.height === 300)[0];
+    const cover = track?.album?.images[0];
     const artistName = track?.album?.artists[0].name || '';
     const duration = timeToString(track.duration_ms);
 

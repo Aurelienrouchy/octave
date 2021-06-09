@@ -19,6 +19,8 @@
         border-radius: 1.5rem;
         transition: all .3s ease;
         cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         .play-button {
             position: absolute;

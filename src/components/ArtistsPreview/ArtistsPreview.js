@@ -10,7 +10,7 @@ import { ReactComponent as Star } from './../../assets/icons/star.svg';
 const ArtistsPreview = ({ artist }) => {
     const history = useHistory();
     const { state } = useLocation();
-    const { url } = artist?.images?.filter(image => image.height === 320)[0] || '';
+    const { url } = artist?.images[0] || '';
     const followers = artist?.followers?.total || 0;
 
     const onClickViewArtistAlbum = event => {
@@ -26,7 +26,7 @@ const ArtistsPreview = ({ artist }) => {
     };
 
     useLayoutEffect(() => {
-        if (state !== null) {
+        if (state !== null && url === state?.url) {
             const { y, x, width, height} = state;
             const el = document.documentElement.style;
             el.setProperty('--translate-in', `translate(${-x}px, ${-y}px)`)
@@ -38,17 +38,13 @@ const ArtistsPreview = ({ artist }) => {
                 state.url = null
             }
         };
-    }, [state]);
+    }, [state, url]);
 
     return (
         <div className="artists-preview" onClick={onClickViewArtistAlbum}>
             <div 
-                className={url === (state && state.url) ? 'cover cover-in' : 'cover'}
-                style={{
-                    background: url ? `url(${url})` : '#f5c9b4',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover'
-                }}
+                className={url === state?.url ? 'cover cover-in' : 'cover'}
+                style={ url ? {'background-image' : `url(${url})`} : {'background-color': '#f5c9b4' }}
             ></div>
             <div className="infos">
                 <div className="name">{artist.name}</div>

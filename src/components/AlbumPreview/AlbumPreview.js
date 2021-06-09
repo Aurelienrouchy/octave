@@ -11,13 +11,13 @@ const AlbumPreview = ({
     displayTrackNumber = false,
     displayReleaseDate = false
 }) => {
-    const cover = album?.images?.filter(image => image.height === 300)[0];
+    const cover = album?.images[0];
 
     return (
         <div className={`album-preview ${className}`} style={style}>
             <div 
                 className="cover"
-                style={{background: `url(${cover.url})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+                style={{backgroundImage: `url(${cover.url})`}}
             >
                 <PlayButton className="play-button" onClick={() => play({ "context_uri": album.uri})} />
             </div>
